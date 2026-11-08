@@ -26,7 +26,7 @@ iosApp/     iOS application host (Xcode project)
 ## Build and test
 
 ```sh
-mise run check      # Android lint
+mise run check      # YAML and TOML lint, Android lint
 mise run test       # Python script tests and Android host unit tests
 mise run build      # Debug APK
 ./gradlew koverXmlReport   # Coverage report

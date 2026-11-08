@@ -18,7 +18,7 @@ run = "kempt format"
 
 [tasks.check]
 description = "Run the static checks"
-run = "./gradlew :androidApp:lintDebug"
+run = ["hk check --all", "./gradlew :androidApp:lintDebug"]
 
 [tasks.test]
 description = "Run the Python script tests and the Android host unit tests"

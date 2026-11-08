@@ -9,11 +9,11 @@ local linters = new Mapping<String, Step> {
     ["trailing_whitespace"] = Builtins.trailing_whitespace
     ["check_merge_conflict"] = Builtins.check_merge_conflict
     ["taplo"] = Builtins.taplo
-    // Check only: in fix mode the builtin runs `ryl check --fix`, which exits 0 while errors remain.
-    ["ryl"] = (Builtins.ryl) {
-        fix = null
-        check_diff = null
-        check_after_diff = false
+    // Not Builtins.ryl: its `--diff` check only reports fixable problems, so a duplicate key or a syntax error would pass.
+    ["ryl"] {
+        glob = List("**/*.yml", "**/*.yaml")
+        check = "ryl check {{files}}"
+        fix = "ryl check --fix {{files}}"
     }
 }
 
