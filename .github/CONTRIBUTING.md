@@ -6,13 +6,13 @@ Thank you for contributing. Keep changes focused, tested and easy to review.
 
 1. Search existing issues and pull requests.
 2. For a new feature or an architectural change, open an issue first so the approach can be agreed.
-3. Run `mise install`. [mise](https://mise.jdx.dev) installs every pinned tool (JDK, hk, kempt, Python, pkl, taplo, yamlfmt) from `mise.toml` and then installs the git hooks (`hk install --mise`), so there is nothing else to set up. The Gradle version is pinned by the wrapper, and the Android SDK is installed separately.
+3. Run `mise install`. [mise](https://mise.jdx.dev) installs every pinned tool (JDK, hk, kempt, Python, pkl, taplo, ryl) from `mise.toml` and then installs the git hooks (`hk install --mise`), so there is nothing else to set up. The Gradle version is pinned by the wrapper, and the Android SDK is installed separately.
 
 ## Git hooks
 
 | Hook | Runs |
 |---|---|
-| `pre-commit` | kempt formatting, final newline, trailing whitespace, merge conflict markers, taplo for TOML and yamlfmt for YAML, on staged files only |
+| `pre-commit` | kempt formatting, final newline, trailing whitespace, merge conflict markers, taplo for TOML and ryl for YAML, on staged files only |
 | `commit-msg` | the Conventional Commits check in `.github/scripts/commit_scope.py` |
 | `pre-push` | `mise run check` and `mise run test` |
 
