@@ -1,7 +1,5 @@
 # Kemana
 
-[![CI](https://github.com/lscythe/kemana-app/actions/workflows/ci.yml/badge.svg?branch=develop)](https://github.com/lscythe/kemana-app/actions/workflows/ci.yml)
-[![CodeQL](https://github.com/lscythe/kemana-app/actions/workflows/codeql.yml/badge.svg?branch=develop)](https://github.com/lscythe/kemana-app/actions/workflows/codeql.yml)
 [![codecov](https://codecov.io/gh/lscythe/kemana-app/branch/develop/graph/badge.svg)](https://codecov.io/gh/lscythe/kemana-app)
 [![License](https://img.shields.io/github/license/lscythe/kemana-app)](LICENSE)
 

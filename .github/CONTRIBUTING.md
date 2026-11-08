@@ -68,12 +68,7 @@ mise run build
 
 With Xcode and an iOS simulator runtime installed, also run `mise run test-ios` and `mise run build-ios`.
 
-The `pre-push` hook runs `mise run test`. On every pull request CI runs:
-
-- **Android**: `mise run check`, `mise run test`, `mise run build` and Kover coverage uploaded to Codecov
-- **CodeQL** for Kotlin and Java, and **Dependency review** for new dependencies
-
-The Android job must pass before a pull request can merge. A pull request that only changes Markdown files or `docs/` skips the build jobs; the skipped Android job still satisfies the required check.
+The `pre-push` hook runs `mise run test`. On every pull request CI runs `mise run check`, `mise run test`, `mise run build` and Kover coverage uploaded to Codecov. CI must pass before a pull request is merged.
 
 ## Secrets
 

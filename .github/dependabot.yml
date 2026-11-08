@@ -16,14 +16,3 @@ updates:
         patterns:
           - org.jetbrains.compose*
           - androidx.compose*
-
-  - package-ecosystem: github-actions
-    directories:
-      - /
-      - /.github/actions/*
-    schedule:
-      interval: weekly
-    target-branch: develop
-    commit-message:
-      prefix: ci
-      include: scope
