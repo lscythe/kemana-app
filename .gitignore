@@ -18,6 +18,7 @@ local.properties
 build/
 .kotlin/
 __pycache__/
+.ryl_cache/
 *.xcuserstate
 xcuserdata/
 iosApp/build/

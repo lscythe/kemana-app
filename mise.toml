@@ -1,5 +1,7 @@
+min_version = "2026.11.3"
+
 [tools]
-java = "temurin-27.0.1"
+java ="temurin-27.0.1"
 hk = "2.11.1"
 pkl = "0.33.0"
 "github:ZacSweers/kempt" = "0.4.0"
