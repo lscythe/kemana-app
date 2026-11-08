@@ -1,16 +1,16 @@
 [versions]
-agp = "9.6.0-alpha02"
+agp = "9.6.0-alpha03"
 android-compileSdk = "37"
-android-compileSdkMinor = "1"
+android-compileSdkMinor = "2"
 android-minSdk = "24"
 android-targetSdk = "37"
 androidx-activity = "1.14.0-alpha03"
-androidx-lifecycle = "2.10.0"
-composeMultiplatform = "1.13.0-beta01"
+androidx-lifecycle = "2.11.0"
+composeMultiplatform = "1.13.0-beta02"
 kotlin = "2.4.21"
 kover = "0.9.11"
 ktfmt = "0.64"
-material3 = "1.13.0-beta01"
+material3 = "1.13.0-beta02"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }

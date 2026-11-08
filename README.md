@@ -19,14 +19,14 @@ iosApp/     iOS application host (Xcode project)
 
 ## Requirements
 
-- JDK 25 (managed with [mise](https://mise.jdx.dev): `mise install`)
+- [mise](https://mise.jdx.dev): `mise install` provides the pinned JDK and the other tools listed in `mise.toml`, and installs the git hooks
 - Android SDK; point Gradle at it with a `local.properties` file containing `sdk.dir=/path/to/sdk`
 - Xcode, for the iOS targets
 
 ## Build and test
 
 ```sh
-mise run check      # Android lint
+mise run check      # YAML and TOML lint, Android lint
 mise run test       # Python script tests and Android host unit tests
 mise run build      # Debug APK
 ./gradlew koverXmlReport   # Coverage report
