@@ -1,0 +1,32 @@
+[tools]
+java = "temurin-25"
+hk = "2.9.0"
+"github:ZacSweers/kempt" = "0.4.0"
+python = "3.15.2"
+
+[tasks.format]
+description = "Format sources with kempt"
+run = "kempt format"
+
+[tasks.check]
+description = "Run the static checks"
+run = "./gradlew :androidApp:lintDebug"
+
+[tasks.test]
+description = "Run the Python script tests and the Android host unit tests"
+run = [
+  "python3 -m unittest discover -s .github/scripts -p 'test_*.py'",
+  "./gradlew :shared:testAndroidHostTest :androidApp:testDebugUnitTest",
+]
+
+[tasks.test-ios]
+description = "Run the iOS simulator tests (needs Xcode and a simulator runtime)"
+run = "./gradlew :shared:iosSimulatorArm64Test"
+
+[tasks.build]
+description = "Assemble the debug APK"
+run = "./gradlew :androidApp:assembleDebug"
+
+[tasks.build-ios]
+description = "Build the iOS simulator app (needs Xcode)"
+run = "xcodebuild build -project iosApp/iosApp.xcodeproj -scheme iosApp -configuration Debug -destination 'generic/platform=iOS Simulator' -derivedDataPath build/ios CODE_SIGNING_ALLOWED=NO"
