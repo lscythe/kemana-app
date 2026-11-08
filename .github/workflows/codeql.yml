@@ -1,5 +1,4 @@
 name: CodeQL
-
 on:
   push:
     branches: [main, develop]
@@ -8,17 +7,13 @@ on:
     paths-ignore: ['**/*.md', 'docs/**']
   schedule:
     - cron: '30 2 * * 1'
-
 env:
   GRADLE_OPTS: >-
-    -Dorg.gradle.jvmargs=-Xmx4096M
-    -Dorg.gradle.daemon=false
-
+    -Dorg.gradle.jvmargs=-Xmx4096M -Dorg.gradle.daemon=false
 permissions:
   actions: read
   contents: read
   security-events: write
-
 jobs:
   analyze:
     name: Analyze (${{ matrix.language }})
@@ -33,13 +28,13 @@ jobs:
       - name: Set up Gradle
         uses: ./.github/actions/gradle-setup
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@9b3254085494b55a0f7c4c2b3d2d52cc712ce370 # v4.39.1
+        uses: github/codeql-action/init@33d7b85da1a04171e211befe2c739303b9a4c066 # v4.39.3
         with:
           languages: ${{ matrix.language }}
           build-mode: manual
       - name: Build debug APK
         run: ./gradlew --no-build-cache :androidApp:assembleDebug
       - name: Perform CodeQL analysis
-        uses: github/codeql-action/analyze@9b3254085494b55a0f7c4c2b3d2d52cc712ce370 # v4.39.1
+        uses: github/codeql-action/analyze@33d7b85da1a04171e211befe2c739303b9a4c066 # v4.39.3
         with:
           category: /language:${{ matrix.language }}
