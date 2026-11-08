@@ -1,4 +1,5 @@
 rootProject.name = "Kemana"
+
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {
@@ -33,4 +34,5 @@ plugins {
 }
 
 include(":shared")
+
 include(":androidApp")

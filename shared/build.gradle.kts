@@ -13,9 +13,10 @@ kotlin {
     androidLibrary {
         namespace = "dev.lscythe.app.kemana.shared"
         compileSdk {
-            version = release(libs.versions.android.compileSdk.get().toInt()) {
-                minorApiLevel = libs.versions.android.compileSdkMinor.get().toInt()
-            }
+            version =
+                release(libs.versions.android.compileSdk.get().toInt()) {
+                    minorApiLevel = libs.versions.android.compileSdkMinor.get().toInt()
+                }
         }
         minSdk = libs.versions.android.minSdk.get().toInt()
 
@@ -31,14 +32,15 @@ kotlin {
     }
 
     listOf(
-        iosArm64(),
-        iosSimulatorArm64()
-    ).forEach { iosTarget ->
-        iosTarget.binaries.framework {
-            baseName = "Shared"
-            isStatic = true
+            iosArm64(),
+            iosSimulatorArm64(),
+        )
+        .forEach { iosTarget ->
+            iosTarget.binaries.framework {
+                baseName = "Shared"
+                isStatic = true
+            }
         }
-    }
 
     @OptIn(ExperimentalKotlinGradlePluginApi::class)
     dependencies {
