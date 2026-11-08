@@ -1,9 +1,15 @@
-amends "package://github.com/jdx/hk/releases/download/v2.9.0/hk@2.9.0#/Config.pkl"
+amends "package://github.com/jdx/hk/releases/download/v2.11.1/hk@2.11.1#/Config.pkl"
+import "package://github.com/jdx/hk/releases/download/v2.11.1/hk@2.11.1#/Builtins.pkl"
 
 local linters = new Mapping<String, Step> {
     ["kempt"] {
         fix = "kempt hook"
     }
+    ["newlines"] = Builtins.newlines
+    ["trailing_whitespace"] = Builtins.trailing_whitespace
+    ["check_merge_conflict"] = Builtins.check_merge_conflict
+    ["taplo"] = Builtins.taplo
+    ["yamlfmt"] = Builtins.yamlfmt
 }
 
 hooks {
@@ -28,8 +34,8 @@ hooks {
     }
     ["pre-push"] {
         steps = new Mapping<String, Step> {
-            ["test"] {
-                check = "mise run test"
+            ["check-and-test"] {
+                check = "mise run check && mise run test"
             }
         }
     }
